@@ -8,13 +8,15 @@
 int main() {
 
     //Card 1
-    int zipcodeOne, populationOne, ageOne, touristAttractionsOne, cityOneWins;
+    int zipcodeOne, populationOne, ageOne, touristAttractionsOne;
     char cityNameOne[50], cardCodeOne[3];
-    float areaOne, gdpOne, populationDensityOne, gdpPerCapitaOne, calculateMediaOne;
+    float areaOne, gdpOne, populationDensityOne, gdpPerCapitaOne;
 
-    int zipcodeTwo, populationTwo, ageTwo, touristAttractionsTwo, cityTwoWins;
+    int zipcodeTwo, populationTwo, ageTwo, touristAttractionsTwo;
     char cityNameTwo[50], cardCodeTwo[3];
-    float areaTwo, gdpTwo, populationDensityTwo, gdpPerCapitaTwo, calculateMediaTwo;
+    float areaTwo, gdpTwo, populationDensityTwo, gdpPerCapitaTwo;
+
+    float mediaOneCity, mediaTwoCity;
 
     //Introdução ao jogo
     printf("================================\n");
@@ -38,6 +40,9 @@ int main() {
 
     printf("Digite a area geográfica da primeira carta:\n");
     scanf("%f", &areaOne);
+
+    printf("Digite a população da primeira carta:\n");
+    scanf("%f", &populationOne);
 
     printf("Digite o numero de Pontos Turisticos da primeira carta:\n");
     scanf("%d", &touristAttractionsOne);
@@ -65,6 +70,9 @@ int main() {
     printf("Digite a area geográfica da segunda carta:\n");
     scanf("%f", &areaTwo);
 
+    printf("Digite a população da segunda carta:\n");
+    scanf("%f", &populationTwo);
+
     printf("Digite o numero de Pontos Turisticos da segunda carta:\n");
     scanf("%d", &touristAttractionsTwo);
 
@@ -73,8 +81,45 @@ int main() {
 
     printf("=======CARTA REGISTRADA COM SUCESSO========\n");
 
-    
+    //Comparando Cartas
 
+    //Comparando Idade
+    if (ageOne > ageTwo) {
+        printf("A cidade da primeira carta é a mais antiga, com %d anos!\n", ageOne);
+    }   else {
+        printf("A cidade da segunda carta é a mais antiga, com %d anos!\n", ageTwo);
+    }
+
+    //Comparando Area
+    if (areaOne > areaTwo) {
+        printf("A cidade da primeira carta é a maior, com uma area de %f!\n", areaOne);
+    } else {
+        printf("A cidade da segunda carta é a maior, com uma area de %f!\n", areaTwo);
+    }
+
+    //Comparando População
+    if (populationOne > populationTwo) {
+        printf("A cidade da primeira carta é a com maior população, com uma população de %d!\n", populationOne);
+    }   else {
+        printf("A cidade da segunda carta é a com maior população, com uma população de %d!\n", populationTwo);
+    }
+
+    //Comparando número de pontos turisticos
+    if (touristAttractionsOne > touristAttractionsTwo) {
+        printf("A cidade da primeira carta tem o maior número de pontos turisticos, com %d pontos turisticos!\n", touristAttractionsOne);
+    } else {
+        printf("A cidade da segunda carta tem o maior número de pontos turisticos, com %d pontos turisticos!\n", touristAttractionsTwo);
+    }
+
+    //Mostrando carta vencedora
+
+    mediaOneCity = ageOne + areaOne + populationOne + touristAttractionsOne / 4;
+    mediaTwoCity = ageTwo + areaTwo + populationTwo + touristAttractionsTwo / 4;
+
+    printf("=======RESULTADO========\n");
+    if (mediaOneCity > mediaTwoCity) {
+        printf("A cidade da primeira carta é a vencedora!!\n");
+    }
     // Definição das variáveis para armazenar as propriedades das cidades
     // Você pode utilizar o código do primeiro desafio
 
