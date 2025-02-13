@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
@@ -7,11 +9,15 @@
 
 int main() {
 
+    //Menu
+    int menu;
+
     //Card 1
     int zipcodeOne, populationOne, ageOne, touristAttractionsOne;
     char cityNameOne[50], cardCodeOne[3];
     float areaOne, gdpOne, populationDensityOne, gdpPerCapitaOne;
 
+    //Card 2
     int zipcodeTwo, populationTwo, ageTwo, touristAttractionsTwo;
     char cityNameTwo[50], cardCodeTwo[3];
     float areaTwo, gdpTwo, populationDensityTwo, gdpPerCapitaTwo;
@@ -23,63 +29,85 @@ int main() {
     printf("=======JOGO SUPER TRUNFO========\n");
     printf("================================\n");
 
-    //Cadastrando a Primeira Carta
-    pritf("==CADASTRE A PRIMEIRA CARTA==\n");
+    printf("1. Iniciar Jogo\n");
+    printf("2. Regras do Jogo\n");
+    printf("3. Sair do Jogo\n");
 
-    printf("Digite o código da primeira carta:\n");
-    scanf("%d", &cardCodeOne);
+    switch (menu) {
+        case 1:
+            printf("Jogo Iniciado\n");
 
-    printf("Digite o CEP da primeira carta:\n");
-    scanf("%d", &zipcodeOne);
+            pritf("==CADASTRE A PRIMEIRA CARTA==\n");
 
-    printf("Digite o nome da primeira carta:\n");
-    scanf("%s", &cityNameOne);
+            printf("Digite o código da primeira carta:\n");
+            scanf("%d", &cardCodeOne);
+        
+            printf("Digite o CEP da primeira carta:\n");
+            scanf("%d", &zipcodeOne);
+        
+            printf("Digite o nome da primeira carta:\n");
+            scanf("%s", &cityNameOne);
+        
+            printf("Digite a idade da primeira carta:\n");
+            scanf("%d", &ageOne);
+        
+            printf("Digite a area geográfica da primeira carta:\n");
+            scanf("%f", &areaOne);
+        
+            printf("Digite a população da primeira carta:\n");
+            scanf("%f", &populationOne);
+        
+            printf("Digite o numero de Pontos Turisticos da primeira carta:\n");
+            scanf("%d", &touristAttractionsOne);
+        
+            printf("Digite o PIB da primeira carta:\n");
+            scanf("%f", &gdpOne);
+        
+            printf("=======CARTA REGISTRADA COM SUCESSO========\n");
+        
+            //Cadastrando a Segunda Carta
+            pritf("==CADASTRE A SEGUNDA CARTA==\n");
+        
+            printf("Digite o código da segunda carta:\n");
+            scanf("%d", &cardCodeTwo);
+        
+            printf("Digite o CEP da segunda carta:\n");
+            scanf("%d", &zipcodeTwo);
+        
+            printf("Digite o nome da segunda carta:\n");
+            scanf("%s", &cityNameTwo);
+        
+            printf("Digite a idade da segunda carta:\n");
+            scanf("%d", &ageTwo);
+        
+            printf("Digite a area geográfica da segunda carta:\n");
+            scanf("%f", &areaTwo);
+        
+            printf("Digite a população da segunda carta:\n");
+            scanf("%f", &populationTwo);
+        
+            printf("Digite o numero de Pontos Turisticos da segunda carta:\n");
+            scanf("%d", &touristAttractionsTwo);
+        
+            printf("Digite o PIB da segunda carta:\n");
+            scanf("%f", &gdpTwo);
+        
+            printf("=======CARTA REGISTRADA COM SUCESSO========\n");
+        break;
 
-    printf("Digite a idade da primeira carta:\n");
-    scanf("%d", %ageOne);
+        case 2:
+            printf("Resgras do Jogo:\n");
+            printf("O jogo consiste no cadastro de duas cartas de cidades, ganha aquela que tiver a maior média de Dados.\n");
+        break;
 
-    printf("Digite a area geográfica da primeira carta:\n");
-    scanf("%f", &areaOne);
-
-    printf("Digite a população da primeira carta:\n");
-    scanf("%f", &populationOne);
-
-    printf("Digite o numero de Pontos Turisticos da primeira carta:\n");
-    scanf("%d", &touristAttractionsOne);
-
-    printf("Digite o PIB da primeira carta:\n");
-    scanf("%f", &gdpOne);
-
-    printf("=======CARTA REGISTRADA COM SUCESSO========\n");
-
-    //Cadastrando a Segunda Carta
-    pritf("==CADASTRE A SEGUNDA CARTA==\n");
-
-    printf("Digite o código da segunda carta:\n");
-    scanf("%d", &cardCodeTwo);
-
-    printf("Digite o CEP da segunda carta:\n");
-    scanf("%d", &zipcodeTwo);
-
-    printf("Digite o nome da segunda carta:\n");
-    scanf("%s", &cityNameTwo);
-
-    printf("Digite a idade da segunda carta:\n");
-    scanf("%d", %ageTwo);
-
-    printf("Digite a area geográfica da segunda carta:\n");
-    scanf("%f", &areaTwo);
-
-    printf("Digite a população da segunda carta:\n");
-    scanf("%f", &populationTwo);
-
-    printf("Digite o numero de Pontos Turisticos da segunda carta:\n");
-    scanf("%d", &touristAttractionsTwo);
-
-    printf("Digite o PIB da segunda carta:\n");
-    scanf("%f", &gdpTwo);
-
-    printf("=======CARTA REGISTRADA COM SUCESSO========\n");
+        case 3:
+            printf("Saindo do jogo.");
+        break;
+        
+        default: 
+            
+        break;
+    }
 
     //Comparando Cartas
 
@@ -119,7 +147,7 @@ int main() {
     printf("=======RESULTADO========\n");
     if (mediaOneCity > mediaTwoCity) {
         printf("A cidade da primeira carta é a vencedora!!\n");
-    } else if (mediaOneCity = mediaTwoCity) {
+    } else if (mediaOneCity == mediaTwoCity) {
         printf("As cidades empataram!!\n");
     } else {
         printf("A cidade da segunda carta é a vencedora!!\n");
